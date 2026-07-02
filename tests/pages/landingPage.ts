@@ -41,6 +41,27 @@ export class LandingPage {
         // Click the continue button
         await this.start_button.click();
     }
+    async checkAllTextUsesFont(expectedFont: string): Promise<void> {
+        const elements = this.page.locator('body *');
+
+        const count = await elements.count();
+
+        for (let i = 0; i < count; i++) {
+            const element = elements.nth(i);
+
+            const text = (await element.textContent())?.trim();
+            if (!text) continue;
+
+            const fontFamily = await element.evaluate(el =>
+                window.getComputedStyle(el).fontFamily
+            );
+
+            expect(
+                fontFamily,
+                `Element "${text}" should use ${expectedFont}`
+            ).toContain(expectedFont);
+        }
+    }
 }
 
 export default LandingPage;
