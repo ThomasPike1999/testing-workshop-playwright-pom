@@ -6,6 +6,7 @@ import EntitlementBasedOnPage from "./pages/entitlementBasedOnPage";
 import WorkOutHolidayPage from "./pages/workOutHolidayPage";
 import DaysWorkedPerWeekPage from "./pages/daysWorkedPerWeekPage";
 import SummaryPage from "./pages/summaryPage";
+import LeaveYearStartPage from "./pages/leaveYearStartPage"
 
 test(`Your test - Task 1 - flow diagram 2`, async ({ page }): Promise<void> => {
     // Complete your first test here!
@@ -30,7 +31,10 @@ test(`Your test - Task 1 - flow diagram 2`, async ({ page }): Promise<void> => {
     // and 2 - create a content file in the 'content' directory
     // finally, add the steps below.
 
-
+    const leaveYearStartPage: LeaveYearPage = new LeaveYearStartPage(page);
+    await leaveYearStartPage.checkPageLoads();
+    await leaveYearStartPage.enterDate('01/04/2024');
+    await leaveYearStartPage.continueOn();
 
     // 3. Entitlement Based On Page
     const entitlementBasedOnPage: EntitlementBasedOnPage = new EntitlementBasedOnPage(page);
