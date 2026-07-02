@@ -7,7 +7,7 @@ module.exports = defineConfig({
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
   /* Retry on CI only */
-  retries: 4, // Set the number of retries for all projects
+  retries: 0, // Set the number of retries for all projects
 
   timeout: 5 * 60 * 1000, // How long before a test fails due to running for too long
   expect: {
