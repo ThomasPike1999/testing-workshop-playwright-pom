@@ -1,8 +1,8 @@
 import { Page, type Locator } from 'playwright';
 import {expect} from "@playwright/test";
-import hoursinPayPeriodPage_content from "../content/hoursinPayPeriodPage_content";
+import hoursinPayPeriodPage_content from "../content/hoursInPayPeriodPage_content";
 
-export class hoursinPayPeriodPage {
+export class hoursInPayPeriodPage {
     private readonly page: Page;
     private readonly title: string;
     private readonly heading: string;
@@ -35,4 +35,4 @@ export class hoursinPayPeriodPage {
     }
 }
 
-export default hoursinPayPeriodPage;
+export default hoursInPayPeriodPage;
