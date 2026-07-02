@@ -31,7 +31,7 @@ test(`Your test - Task 1 - flow diagram 2`, async ({ page }): Promise<void> => {
     // and 2 - create a content file in the 'content' directory
     // finally, add the steps below.
 
-    const leaveYearStartPage: LeaveYearPage = new LeaveYearStartPage(page);
+    const leaveYearStartPage: LeaveYearStartPage = new LeaveYearStartPage(page);
     await leaveYearStartPage.checkPageLoads();
     await leaveYearStartPage.enterDate('01/04/2024');
     await leaveYearStartPage.continueOn();
