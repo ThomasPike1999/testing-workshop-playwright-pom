@@ -7,8 +7,9 @@ import WorkOutHolidayPage from "./pages/workOutHolidayPage";
 import DaysWorkedPerWeekPage from "./pages/daysWorkedPerWeekPage";
 import SummaryPage from "./pages/summaryPage";
 import LeaveYearStartPage from "./pages/leaveYearStartPage"
+import HoursInPayPeriodPage from "./pages/hoursInPayPeriodPage"
 
-test(`Your test - Task 1 - flow diagram 2`, async ({ page }): Promise<void> => {
+test.only(`Your test - Task 1 - flow diagram 2`, async ({ page }): Promise<void> => {
     // Complete your first test here!
     // You will need to edit IrregularHoursPage.ts to add a method for clicking the "Yes" button, and you will need to create a new page object for the "Leave Year Start" page.
 
@@ -38,7 +39,7 @@ test(`Your test - Task 1 - flow diagram 2`, async ({ page }): Promise<void> => {
 
     const hoursInPayPeriodPage: HoursInPayPeriodPage = new HoursInPayPeriodPage(page);
     await hoursInPayPeriodPage.checkPageLoads();
-    await hoursInPayPeriodPage.enterResponse(40);
+    await hoursInPayPeriodPage.fillTextBox('100');
     await hoursInPayPeriodPage.continueOn();
 
     // 3. Entitlement Based On Page
@@ -62,7 +63,7 @@ test(`Your test - Task 1 - flow diagram 2`, async ({ page }): Promise<void> => {
     // 6. Summary Page
     const summaryPage: SummaryPage = new SummaryPage(page);
     await summaryPage.checkPageLoads();
-    await summaryPage.expectSummary('The statutory holiday entitlement is 16.8 days holiday.');
+    await summaryPage.expectSummary("The statutory entitlement for this pay period is 12 hours.");
 })
 
 test(`Your test - Task 2 - flow diagram 3`, async ({ page }): Promise<void> => {

@@ -24,6 +24,7 @@ export class SummaryPage {
     }
 
     async expectSummary(expectedText: string): Promise<void> {
+        console.log(this.summary_result);
         await expect(this.summary_result).toContainText(expectedText);
     }
 }
