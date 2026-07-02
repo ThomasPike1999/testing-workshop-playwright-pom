@@ -1,7 +1,6 @@
 import { Page, type Locator } from 'playwright';
 import {expect} from "@playwright/test";
 import leaveYearStartPage_content from "../content/leaveYearStartPage_content";
-
 export class leaveYearStartPage {
     private readonly page: Page;
     private readonly title: string;
