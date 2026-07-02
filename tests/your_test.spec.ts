@@ -23,7 +23,7 @@ test(`Your test - Task 1 - flow diagram 2`, async ({ page }): Promise<void> => {
     // 2. Irregular Hours Page - Change this to click the "Yes" button instead of the "No" button.
     const irregularHoursPage: IrregularHoursPage = new IrregularHoursPage(page);
     await irregularHoursPage.checkPageLoads();
-    await irregularHoursPage.clickNoButton();
+    await irregularHoursPage.clickYesButton();
     await irregularHoursPage.continueOn();
 
     // 3. Leave Year Start Page 
@@ -33,7 +33,7 @@ test(`Your test - Task 1 - flow diagram 2`, async ({ page }): Promise<void> => {
 
     const leaveYearStartPage: LeaveYearStartPage = new LeaveYearStartPage(page);
     await leaveYearStartPage.checkPageLoads();
-    await leaveYearStartPage.enterDate('01/04/2024');
+    await leaveYearStartPage.enterDate('01/03/2024');
     await leaveYearStartPage.continueOn();
 
     // 3. Entitlement Based On Page
